@@ -1,4 +1,4 @@
-var dataApp = angular.module('Gallery',['ui.bootstrap']);
+var dataApp = angular.module('Gallery',[]);
 
 
  dataApp.controller('GalCtrl', function ($scope, $http) 

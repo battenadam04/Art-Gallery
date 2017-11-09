@@ -16,9 +16,26 @@
    <link href="css/custom.css" rel="stylesheet">
    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
  
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61264219-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-61264219-2');
+</script>
+
+   	
+   <!-- check that JS is enabled or redirect-->
+  <noscript>
+  <META HTTP-EQUIV="Refresh" CONTENT="0;URL=ShowErrorPage.html">
+</noscript>
   
   </head>
 <body ng-app="Gallery">
+
+	<div class="se-pre-con"></div>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -28,7 +45,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-       <h1>Cathryn  Gruhn </h1> 
+       <h1 class="siteTitle"><a href="index.html" title="Cathryn Gruhn" >Cathryn  Gruhn</a> </h1> 
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
 	   
@@ -45,9 +62,22 @@
 
 <div class="jumbotron">
   <div class="container-fluid bg-3 text-center"  id="Home">
-	   <div class="row">
-		   
-		   
+	   <div class="row arrow-right">
+						   
+						   <p class="align-center"><img src="img/con.jpg" alt="construction" ></p>
+						   <blockquote id="qod-quote">
+				   <p class="qod-text">
+				     If you hear a voice within you saying, ”You are not a painter,” then by all means paint… and that voice will be silenced.
+				   </p>
+				   <p class="qod-author">
+				      <a href="http://quotesondesign.com/?p=194">
+				         &mdash; Vincent van Gogh
+				      </a>
+				   </p>
+				</blockquote>
+				
+				
+		  
 	   </div>
 
   </div>
@@ -62,7 +92,7 @@
 			<div class="gallery">
 		   <figure class="art" ng-repeat="x in Gal">
 		    <img src="{{x.Source}}" alt="image" class="img-responsive"/>
-		    <figcaption>Daytona Beach <small>United States</small></figcaption>
+		    <figcaption>{{x.Title}} <small>{{x.Description}}</small></figcaption>
 		  </figure>
 		
 			</div>
@@ -82,14 +112,23 @@
 </div>
 
 <div class="container-fluid bg-3 text-center" id="About">
-		<div class="row">
-			           <div class="list-group-item">    
-			<h2>About</h2>
+		<div class="row ">
+			           <div class="list-group-item ">  
+				           
+			          <div class="col-sm-6 center">
+	                 <h2 class="section-header">About</h2>  
+                   <p> <img src="img/bio.jpg" alt="Bio image" id="BioImg" ></p>
+				          
+			
+			
 			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
 
-<p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
+<p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.</p><p> Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, </p>
 			
-			           </div>
+			     
+			       
+			            </div>
+			               </div>
 	</div>
 </div>
 
@@ -98,14 +137,16 @@
 	 		<div class="row">
 	     
      
-           <div class="list-group-item">    
+           <div class="list-group-item">  
+	           
+	            <div class="col-sm-10 center">  
 	         <h2 class="section-header">Contact us</h2>  
               
 	               
 	           
 			      
 			      <form id="User-contactForm" class="form"  action="#" method="post" enctype="multipart/form-data">
-				          <p>If you have any questions or , then please get in touch below and we will reply typically within 2&#45;3 working days.</p> 
+				          <p>If you have any questions then please get in touch below and we will reply typically within 2&#45;3 working days.</p> 
                    
                      
                          
@@ -142,7 +183,7 @@
                    
 				   </form>
               
- 
+	            </div>
       </div><!-- close the list-group-item div -->
        </div><!-- close the row class -->
     </div><!-- close the container class-->
@@ -193,5 +234,7 @@ popup.init()
   <script src="js/scripts.js"></script>
    <script src="js/custom.js"></script>
     <script src="js/mail.js"></script>
+    
+    	<script src="js/load.js"></script>
 </body>
 </html>

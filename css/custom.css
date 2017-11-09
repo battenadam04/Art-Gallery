@@ -2,23 +2,97 @@
 	  
 	html
 	{
-	background-color:black;
-	
+	width:100%;
+	height:100%;
 	}
 	
 	body
 	{
      font-family: 'Rajdhani', sans-serif;	
-     overflow: break-line;	
      background-color:#f2f2f2;
 	}
 	
 	
-	#Home
+	.siteTitle
 	{
-	// background:url("../img/bk3.jpg");
-    //background-repeat: no-repeat;
-    background-size: 100%;
+	
+		//display:inline;
+	//background:Red;
+	width:100%;
+	text-align:center;
+	z-index:500;
+	margin-left:4%;
+	 
+	}
+	
+	.navbar-header
+	{
+		//background:blue;
+		padding:0% 5% 0% 0%;
+		margin:0px auto;
+		z-index:1000;
+       
+	
+	}
+	
+	.siteTitle a
+	{
+		text-decoration:none;
+		color:black !important;
+		
+		
+	}
+	
+	.siteTitle a:hover
+	{
+		color:black;
+		
+	}
+	
+	.center
+	{
+     display: inline-block;
+   margin-left: 50%; /* From parent width */
+   transform: translateX(-50%); /* use self width which can be unknown */
+  -ms-transform: translateX(-50%); /* For IE9 */
+    
+  
+	}
+	
+	
+	.center p
+	{
+		
+		 text-align:left;
+		 padding:1% 0%;
+	}
+	
+	
+	.icon-bar
+	{
+		background-color:black !important;
+	}
+    	
+	.arrow-right 
+	{
+	 display:block;
+	 color: white;
+	 width:100%;
+     padding:5%;
+     font-size:2em;
+
+	}
+	
+	.arrow-right blockquote p
+	{
+     font-size:1.8em;
+	}
+	
+	#qod-quote 
+	{
+	 border:none;
+     //font-size:3em;
+
 	}
 
 	
@@ -27,6 +101,23 @@
 		 padding-top:4%;
 		min-height:100vh; 
 	
+	 }
+	 
+	  #Home
+	 {
+		 padding-top:4%;
+		min-height:70vh; 
+		background:black;
+		margin:0px;
+		
+	
+	 }
+	 
+	 
+	 #Home blockquote a:hover
+	 {
+		 color:white !important;
+		 
 	 }
 	 
 	 .list-group-item
@@ -53,6 +144,22 @@
      .container-fluid h2
      {
 	   margin-top:3%;  
+     }
+     
+     
+     .align-center
+     {
+	     position:relative;
+	     width:100%;
+	   
+	  
+     }
+     
+     .align-center img
+     {
+	     position:relative;
+	 
+	     margin:0px auto;
      }
 
 	
@@ -88,6 +195,48 @@
 
     }
     
+    
+    .changefields
+    {
+	    width:100% auto;
+	    padding:none;
+	    background:white;
+	    height:100% auto;
+    }
+    
+    .changefields table
+    {
+	    width:100%;
+	    display:inline;
+	    height:100%;
+	
+    }
+    
+      .changefields table tr td,.changefields table tr 
+      { 
+	      display:table;
+	      width:100%;
+	      margin:0px;
+	      padding:1%;
+	      background:white;
+	 
+      }
+      
+      .changefields table tr td input
+      {
+	      display:table-cell;
+	      text-align:center;
+	      width:100%;
+	      
+	      
+      }
+      
+      .changefields table thead tr th
+      {
+	      text-align:center;
+	      padding:1% 0%;
+      }
+    
     *,
 *::before,
 *::after {
@@ -101,8 +250,7 @@ img {
 }
 
 /*.galRow css and last 4 lines in .gallery are to fix height issues with images in gallery(masonry css)*/
-.galRow, .adminRow
-{
+.galRow, .adminRow{
 	  -moz-column-width: 18em;
  -webkit-column-width: 18em;
  -moz-column-gap: 1em;
@@ -115,7 +263,7 @@ img {
   -webkit-filter: blur(10px);
           filter: blur(10px);
 }
-.gallery figure {
+.gallery figure, .gallery .changefields {
   -ms-flex-preferred-size: 33.333%;
       flex-basis: 33.333%;
   padding: 10px;
@@ -138,6 +286,12 @@ width:100%;
 }
 .gallery figure figcaption {
   display: none;
+}
+
+td{
+	color:White;
+	padding:0% 1%;
+	width:100%;
 }
 
 .popup {
@@ -208,6 +362,23 @@ width:100%;
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
 }
+
+.popup figure .changefields
+{
+	
+ position: absolute;
+  bottom: 50px;
+  background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.78));
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.78));
+  z-index: 2;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  padding: 100px 20px 20px 20px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;	
+	
+}
 .popup figure figcaption small {
   font-size: 11px;
   display: block;
@@ -230,7 +401,7 @@ width:100%;
   -webkit-filter: blur(15px) contrast(2);
           filter: blur(15px) contrast(2);
 }
-.popup .close {
+.popup .close  {
   position: absolute;
   z-index: 3;
   top: 10px;
@@ -243,10 +414,44 @@ width:100%;
   background: rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
+
+
+
+.Art-Info
+{
+	background:black;
+}
+
+ 
+.popup .close  {
+  width: 40px;
+  height: 40px;
+  background:white;
+  opacity:1 !important;
+}
+
+
+
+.popup .close:hover  {
+ 
+  background:red;
+}
+
+ 
 .popup .close svg {
   width: 100%;
   height: 100%;
+  fill:red;
+
 }
+
+#BioImg
+{
+	  border-radius: 50%;
+	  margin:0px auto;
+	  padding:4% 0%;
+}
+
 
 @-webkit-keyframes poppy {
   0% {
@@ -534,7 +739,7 @@ h2
 
 .list-group-item p
 {
-	width:50%;
+	//width:50%;
 	margin:0px auto;
 	
 }
@@ -547,6 +752,8 @@ h2
 
 }
 
+
+
  .align
 {
 	margin:0px auto;
@@ -556,11 +763,7 @@ h2
 	
 }
 
- .align input
- {
 
-	
- }
 
 .form p
 {
@@ -570,6 +773,11 @@ h2
 .submit
 {
   background:black;
+}
+
+.delArt, .submit
+{
+margin:4% 0%;	
 }
 
 .submit:hover
@@ -661,3 +869,91 @@ h2
   background-color:red;
 }
 
+
+.hiddendiv
+{
+  width:100%;
+  min-height:100vh;
+  top:0%;
+  opacity:0;
+  position:fixed;
+  z-index:1000;
+  background:black;
+}
+
+.messagepop 
+{
+  width:25%;
+  background:#FFA500;
+  padding:2%;
+  position:absolute;
+  z-index:1000;
+  color:white;
+  top:50%;
+  left:37%;
+  display:none;
+  color:black;
+}
+
+.arrow-up 
+{
+  width: 0; 
+  height: 0; 
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  position:absolute;
+  border-bottom: 30px solid #FFA500;
+  top:-10%;
+  left:45%;
+  -ms-transform: rotate(0deg); /* IE 9 */
+  -webkit-transform: rotate(0deg); /* Safari */
+  transform: rotate(0deg);
+}
+
+
+/*-----------------------members area css--------------------*/
+
+
+.message
+{
+	background-color:black !important;
+}
+
+.changefields
+{
+	background:#f2f2f2;
+	border:1px solid black;
+	margin-bottom:4%;
+	
+}
+.changefields form table tr
+{
+	background:#f2f2f2;
+}
+
+
+ /*--------------------css for loading gif - only works along side JS -------------------*/
+	    
+	 .no-js #loader 
+	 { 
+	  display: none;  
+	 }
+	 
+     .js #loader 
+     { 
+	  display: block; 
+	  position: absolute; 
+	  left: 100px; 
+	  top: 0; 
+	 }
+
+    .se-pre-con 
+    {
+	 position: fixed;
+	 left: 0px;
+	 top: 0px;
+	 width: 100%;
+	 height: 100%;
+	 z-index: 9999;
+	 background: url("../img/load.gif") center no-repeat #fff;
+     }

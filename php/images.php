@@ -1,10 +1,9 @@
 <?php
-	
 	 // db connection
 	include "connect.php";
 
 	// SQL Query
-	$query = "SELECT Source FROM Artwork";
+	$query = "SELECT * FROM Artwork";
 
 	// Run SQL query and save results
 	$result = $mysqli->query($query);

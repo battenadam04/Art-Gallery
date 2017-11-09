@@ -23,4 +23,96 @@ $(document).ready(function(){
       });
     }  // End if
   });
+  
+  
+  
+  
+    $(".Art-Info").click(function(e) {
+  
+  $('.gallery, .popup').removeClass('pop');
+		    $(".gallery button").show();
+		    setTimeout(function(){
+		      $('.popup').remove();
+		    }, 100);
+  
+   });
+   
+   
+   
+    $(".hiddendiv").hide();
+    
+      
+  	  $("#message_cancel").click(function(e)
+  	   {
+  	      $(".messagepop").css("display","none");
+  	      $(".hiddendiv").css("display","none");
+  	   });
+  	     
+  	   $(".hiddendiv").click(function(e)
+  	    {
+  	    
+  	      $(".messagepop").css("display","none");
+  	      $(".hiddendiv").css("display","none");
+  	      $(".hiddendiv").hide();
+  	   });
+   
+   $("#PassForget").click(function(e)
+  	  {
+  	     $(".messagepop").fadeToggle().css("display","block");
+  	     $(".hiddendiv").css("display","block");
+  	     $(".hiddendiv").show();
+  	     $("#testInfo").toggle("slow").css("display","none");
+  	 });
+  	     
+  	     
+  	  $("#forgot-pass").submit(function(e)
+  	  {
+  	    e.preventDefault();
+  	    $(".msg").empty();
+  	    
+  	   	var formData = new FormData($(this)[0]);
+  	    
+  	    $.ajax({
+			type: "POST",
+			url: "php/forgot-pass.php",
+            data: formData,
+			async: false,
+			success: function(data)
+			{
+			    var status = data;
+		
+
+		        if(status == '["Success"]' )
+		        {
+				 
+				   $(".msg").append("You will receive an email with your current password");
+				   
+				     setInterval(function()
+                       {
+
+                        $(".messagepop").css("display","none");
+                  
+                        },5000); 
+				 
+			    }//close if statement
+				 
+				else
+				{
+				   $(".msg").append("Sorry we do not have this email address in our database");
+				}
+			
+			},//close success function
+			
+			cache: false,
+			contentType: false,
+			processData: false	
+			
+		}); //close ajax
+  	    
+  	    return false;
+  	  });//close #forgot-pass submit function
+  	     
+
+  
+  
 });
