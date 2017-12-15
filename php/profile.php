@@ -3,7 +3,7 @@
 	include "connect.php";
 
 	// SQL Query
-	$query = "SELECT * FROM Artwork";
+	$query = "SELECT * FROM Profile";
 
 	// Run SQL query and save results
 	$result = $mysqli->query($query);

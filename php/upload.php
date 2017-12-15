@@ -22,7 +22,6 @@ session_start();
    }
 
 
-
   if($errflag == true)
   {
      if(isset($_FILES["ImageArt"]["type"]))
@@ -87,7 +86,7 @@ session_start();
       $error[]="true";
 	 
 	    // SQL Query
-	   $query ="INSERT INTO Artwork (ID, Source) VALUES ('','".$targetPath."')";
+	   $query ="INSERT INTO Artwork (ID, Source,Title,Description) VALUES ('','".$targetPath."','Title','Description')";
 
 	
 	  if (!mysqli_query($mysqli,$query))

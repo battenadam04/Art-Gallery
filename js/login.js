@@ -14,40 +14,29 @@ $("document").ready(function ()
 			async: false,
 			success: function(data)
 			{
-         
 			   var result =JSON.parse(data)[0];
-				
-				//alert(result);	
+					
                if(result == "Success")
 			   {
-				window.location.replace("admin-area.php");
-				  
+				window.location.replace("admin-area.php"); 
 			   }
 					
-			
 			   else
 			   {
-				  $("#logIn")[0].reset();
+				  $("#logIn")[0].reset();// reset form input fields
 				  $("#login-Ex").addClass('fail');
                   $("#login-Ex").val('Login Failed');
 			  
-	
-
-                      setTimeout(function()
-                       {
-
-                         $("#login-Ex").removeClass("fail");
-                         $("#login-Ex").val("Go");
-                  
-                        },2000);
-
+			      setTimeout(function()
+                  {
+                    $("#login-Ex").removeClass("fail");
+                    $("#login-Ex").val("Go");
+                  },2000);
 			    }
-			},
-				
+			},	
 			cache: false,
 			contentType: false,
-			processData: false
-			
+			processData: false	
 		});//close the ajax call
 			
 		return false;

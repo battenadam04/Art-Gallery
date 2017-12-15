@@ -50,7 +50,7 @@
 			while($row = $result->fetch_array(MYSQLI_ASSOC))
 			{
 			   array_push($data, $row);
-			      return array(true,$row);
+			   return array(true,$row);
 			}
 		
 	}
@@ -73,10 +73,8 @@ return array(false,$errors);
 	{
 	 
 	   $_SESSION['Email'] =$data['Email'];
-	   
-	
-		$message = array( 'Success');
-		array_push($status, $message);			
+       $message = array( 'Success');
+	   array_push($status, $message);			
 	}
 	
 		

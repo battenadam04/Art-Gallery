@@ -3,9 +3,8 @@ $('document').ready(function()
 
 			$('#User-contactForm').submit(function(event)
 			{
-				
-				
-			 event.preventDefault();
+					
+			    event.preventDefault();// prevent click event propagation 
 				var formData = new FormData($(this)[0]);
 			
                  $.ajax({
@@ -20,8 +19,7 @@ $('document').ready(function()
 				
 						if(newdata == "Success")
 						{	
-						
-					
+							
 							$("#submitMsg").val(newdata);
 							$("#submitMsg").css({"background-color":"red","color":"white"});
 				            
@@ -35,63 +33,60 @@ $('document').ready(function()
 					        $(".error").empty();
 						}
 						
-						else
-					{
 					
-				 
-				 var i=0;
-			
-				 for(i=0; i < newdata.length; i++)
-				 {
-					  if
-					  (newdata[i] === "Name is required")
-					  {
-						  
-						document.getElementsByName('name')[0].placeholder=newdata[i];
-						$("#name").toggleClass("red-placeholder");
-						  
-					  }
-					  
-					   if
-					  (newdata[i] === "Email is required")
-					  {
-						  
-						document.getElementsByName('email')[0].placeholder=newdata[i];
-						$("#email").toggleClass("red-placeholder");
-						  
-					  }
-					  
-					   if
-					  (newdata[i] === "Subject is required")
-					  {
-						  
-						document.getElementsByName('subject')[0].placeholder=newdata[i];
-						$("#subject").toggleClass("red-placeholder");
-						  
-					  }
-					  
-					   if
-					  (newdata[i] === "Message is required")
-					  {
-						  
-						document.getElementsByName('message')[0].placeholder=newdata[i];
-						$("#message").toggleClass("red-placeholder");
-						  
-					  }
-			  
-				 
-				
-					}
-					}
-						
-							
+					    else
+					    {
+					
+							 var i=0;
+							 for(i=0; i < newdata.length; i++)
+							 {
+								 
+								  // depending on errror find the relevant input field placeholder and enter error here
+								  if
+								  (newdata[i] === "Name is required")
+								  {
+									  
+									document.getElementsByName('name')[0].placeholder=newdata[i];
+									$("#name").toggleClass("red-placeholder");
+									  
+								  }
+								  
+								   if
+								  (newdata[i] === "Email is required")
+								  {
+									  
+									document.getElementsByName('email')[0].placeholder=newdata[i];
+									$("#email").toggleClass("red-placeholder");
+									  
+								  }
+								  
+								   if
+								  (newdata[i] === "Subject is required")
+								  {
+									  
+									document.getElementsByName('subject')[0].placeholder=newdata[i];
+									$("#subject").toggleClass("red-placeholder");
+									  
+								  }
+								  
+								   if
+								  (newdata[i] === "Message is required")
+								  {
+									  
+									document.getElementsByName('message')[0].placeholder=newdata[i];
+									$("#message").toggleClass("red-placeholder");
+									  
+								  }
+			            }
+					}//close success function
+									
 				},
 				
 				cache: false,
 				contentType: false,
 				processData: false			
 		});
-			});
+	});
 			
 		return false;
 	});
