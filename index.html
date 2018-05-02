@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cathryn Gruhns Art Gallery</title>
+	<meta charset="utf-8">
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="Welcome to Cathryn Gruhns Art Gallery." name="description">
+	<meta content="Adam Batten" name="author">
+	<meta content="Cathryn, Cathrign Gruhn, Art, Belfast Art, Gallery, Art Gallery, Belfast Art Gallery, Modern Art, Belfast, Cathryn Gruhn, Kathryn Gruhn, Northern Ireland Art, Artwork, Art showcase, Original art, cathryngruhn" name="keywords">
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	<link href="img/favicon.ico" rel="icon" type="image/x-icon">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
+	<link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+	</script>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61264219-2"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script>
+	     window.dataLayer = window.dataLayer || [];
+	     function gtag(){dataLayer.push(arguments);}
+	     gtag('js', new Date());
+	   
+	     gtag('config', 'UA-61264219-2');
+	</script><!-- check that JS is enabled or redirect-->
+	 <noscript>
+	<meta content="0;URL=ShowErrorPage.html" http-equiv="Refresh"></noscript>
+</head>
+<body id="HomeTop" ng-app="Gallery">
+	<div class="se-pre-con"></div>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button class="navbar-toggle" data-target="#myNavbar" data-toggle="collapse" type="button"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+				<h1 class="siteTitle"><a href="index.html" title="Cathryn Gruhn">Cathryn Gruhn's <span class="H2span">Art Gallery</span></a></h1>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#HomeTop" id="HomeBtn" title="Home">Home</a>
+					</li>
+					<li>
+						<a href="#Gallery" title="Gallery">Gallery</a>
+					</li>
+					<li>
+						<a href="#About" title="About">About</a>
+					</li>
+					<li>
+						<a href="#Contact" title="Contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+		<div class="container-fluid bg-3 text-center" id="Home">
+			<div class="row arrow-right">
+				<blockquote id="qod-quote">
+					<p class="qod-text">If you hear a voice within you saying, ”You are not a painter,” then by all means paint… and that voice will be silenced.</p>
+					<p class="qod-author"><a href="http://quotesondesign.com/?p=194">&mdash; Vincent van Gogh</a></p>
+				</blockquote>
+				<div id="homeMsg">
+					<p>Welcome to Cathryn Gruhn's Art Gallery. Explore the Artwork below and if anything interests you or if you would like to purchase a piece of work then please contact Cathryn Gruhn</p>
+					<p><button class="form-control submit btn btn-primary" id="ContactMsg">GO</button></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-3 text-center" id="Gallery">
+		
+			<div class="list-group-item">
+				<h2 class="section-header">Art Gallery</h2>
+				<div class=" galRow" ng-controller="GalCtrl">
+					<div class="gallery">
+						<figure class="art" ng-repeat="x in Gal">
+							<img alt="image" class="img-responsive" src="{{x.Source}}">
+							<figcaption>
+								{{x.Title}} <small>{{x.Description}}</small>
+							</figcaption>
+						</figure>
+					</div><svg style="display:none;" xmlns="http://www.w3.org/2000/svg">
+					<symbol id="close" viewbox="0 0 18 18">
+						<path clip-rule="evenodd" d="M9,0.493C4.302,0.493,0.493,4.302,0.493,9S4.302,17.507,9,17.507 S17.507,13.698,17.507,9S13.698,0.493,9,0.493z M12.491,11.491c0.292,0.296,0.292,0.773,0,1.068c-0.293,0.295-0.767,0.295-1.059,0 l-2.435-2.457L6.564,12.56c-0.292,0.295-0.766,0.295-1.058,0c-0.292-0.295-0.292-0.772,0-1.068L7.94,9.035L5.435,6.507 c-0.292-0.295-0.292-0.773,0-1.068c0.293-0.295,0.766-0.295,1.059,0l2.504,2.528l2.505-2.528c0.292-0.295,0.767-0.295,1.059,0 s0.292,0.773,0,1.068l-2.505,2.528L12.491,11.491z" fill="#D3AC2B" fill-rule="evenodd"></path>
+					</symbol></svg>
+				</div>
+			</div>
+	
+	</div>
+	
+	<div class="container-fluid bg-3 text-center" id="About" ng-controller="BioCtrl">
+		
+			<div class="list-group-item" >
+				<div class=" center" ng-repeat="x in Bio">
+					<h2 class="section-header">About</h2>
+					<div class="border"><img alt="Bio image" id="BioImg" src="{{x.Img}}" alt="image of Cathryn"></div>
+					<br/>
+					<br/>
+					<p class="text m-5">{{x.Description}}</p>
+			
+			</div>
+		</div>
+	</div>
+	<footer class="container-fluid text-center">
+		<div id="Contact">
+			<div class="row">
+				<div class="col-sm-10 col-sx-12 center">
+					<h2 class="section-header">Contact</h2>
+					<form action="#" class="form" enctype="multipart/form-data" id="User-contactForm" method="post" name="User-contactForm">
+						<p>If you have any questions then please get in touch below and I will reply typically within 2&#45;3 working days.</p>
+						<div class="form-group row">
+							<label class="col-sm-2 form-control-label" for="inputFname">Name</label>
+							<div class="col-sm-10">
+								<input class="form-control" id="name" name="name" placeholder="Name" type="text">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 form-control-label" for="inputFname">Email</label>
+							<div class="col-sm-10">
+								<input class="form-control" id="email" name="email" placeholder="Email address" type="text">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 form-control-label" for="inputFname">Subject</label>
+							<div class="col-sm-10">
+								<input class="form-control" id="subject" name="subject" placeholder="Subject" type="text">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-2 form-control-label" for="inputFname">Message</label>
+							<div class="col-sm-10">
+								<textarea class="form-control" id="message" name="message" placeholder="Message"></textarea>
+							</div>
+						</div><input class="form-control submit btn btn-primary" id="submitMsg" type="submit" value="send">
+					</form>
+				</div><!-- close the center class-->
+			</div><!-- close the row class -->
+		</div><!-- close the container class-->
+		<p>Copyright &#9400; All Rights Reserved - Cathryn Gruhn.</p>
+		<p>Created and Developed by Adam Batten</p>
+	</footer>
+	<script>
+	   popup = {
+	 init: function(){
+	   $(document).on("click",".art", function(){
+	   
+	     popup.open($(this));
+	   });
+	   
+	   $(document).on('click', '.popup img', function(){
+	     return false;
+	   }).on('click', '.popup', function(){
+	     popup.close();
+	   })
+	 },
+	 open: function($figure) {
+	   $('.gallery').addClass('pop');
+	   $popup = $('<div class="popup" />').appendTo($('body'));
+	   $fig = $figure.clone().appendTo($('.popup'));
+	   $bg = $('<div class="bg" />').appendTo($('.popup'));
+	   $close = $('<div class="close"><svg><use xlink:href="#close"><\/use><\/svg><\/div>').appendTo($fig);
+	   $shadow = $('<div class="shadow" />').appendTo($fig);
+	   src = $('img', $fig).attr('src');
+	   $shadow.css({backgroundImage: 'url(' + src + ')'});
+	   $bg.css({backgroundImage: 'url(' + src + ')'});
+	   setTimeout(function(){
+	     $('.popup').addClass('pop');
+	   }, 10);
+	 },
+	 close: function(){
+	   $('.gallery, .popup').removeClass('pop');
+	   setTimeout(function(){
+	     $('.popup').remove()
+	   }, 100);
+	 }
+	}
+
+	popup.init()
+
+	</script> 
+	<script src="js/scripts.js">
+	</script> 
+	<script src="js/custom.js">
+	</script> 
+	<script src="js/mail.js">
+	</script> 
+	<script src="js/load.js">
+	</script>
+</body>
+</html>
